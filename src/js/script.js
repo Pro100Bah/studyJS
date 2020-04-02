@@ -20,6 +20,7 @@ let mainList = {
   employers: {},
   open: false,
   discount: false,
+  shopItems: [],
   chooseGoods: function chooseGoods() {
     for (i = 0; i < 5; i++) {
       let question = prompt("Какой тип товаров будем продавать?", "");
@@ -62,6 +63,13 @@ let mainList = {
       let name = prompt("Имя сотрудника?", "");
       mainList.employers[i] = name;
     }
+  },
+  chooseShopItems: function chooseShopItems() {
+    let items = prompt("Перечислите через запятую товары", "");
+
+    mainList.shopItems = items.split(",");
+    mainList.shopItems.push(prompt("Подождите, еще", ""));
+    mainList.shopItems.sort();
   }
 };
 
